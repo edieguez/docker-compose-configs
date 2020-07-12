@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  rabbitmq:
+    image: 'bitnami/rabbitmq'
+    environment:
+      RABBITMQ_USERNAME: 'user'
+      RABBITMQ_PASSWORD: 'bitnami'
+    ports:
+      - '4369:4369'
+      - '5672:5672'
+      - '25672:25672'
+      - '15672:15672'
+    volumes:
+      - 'rabbitmq_data:/bitnami'
+volumes:
+  rabbitmq_data:
+    driver: local

@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: no_password
+      PGPASSWORD: no_password
+      POSTGRES_DB: postgres
+    volumes:
+      - 'postgres_data:/var/lib/postgresql'
+    ports:
+       - '5432:5432'
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_LISTEN_PORT: 9091
+    volumes:
+       - pgadmin_data:/var/lib/pgadmin
+    ports:
+      - "9091:9091"
+
+volumes:
+  postgres_data:
+    driver: local
+  pgadmin_data:
+    driver: local

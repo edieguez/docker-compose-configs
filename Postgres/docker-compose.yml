@@ -5,14 +5,14 @@ services:
     image: postgres
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: no_password
-      PGPASSWORD: no_password
+      POSTGRES_PASSWORD: Globant12
+      PGPASSWORD: Globant12
       POSTGRES_DB: postgres
     volumes:
       - 'postgres_data:/var/lib/postgresql'
     ports:
        - '5432:5432'
-  
+
   pgadmin:
     image: dpage/pgadmin4
     environment:

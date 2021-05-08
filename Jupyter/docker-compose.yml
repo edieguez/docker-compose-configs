@@ -3,7 +3,11 @@ services:
   datascience-notebook:
       image: jupyter/tensorflow-notebook
       volumes:
-          - '.:/home/jovyan/'
+          - 'jupyter_home:/home/jovyan/'
       ports:
         - 8888:8888
       container_name: datascience-notebook-container
+
+volumes:
+  jupyter_home:
+    driver: local

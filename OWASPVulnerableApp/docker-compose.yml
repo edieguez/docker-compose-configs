@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  jenkins:
+    image: 'sasanlabs/owasp-vulnerableapp:latest'
+    ports:
+      - '9090:9090'
+

@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  nexus-iq-server:
+    image: 'sonatype/nexus-iq-server:latest'
+    ports:
+      - '8070:8070'
+      - '8071:8071'
+

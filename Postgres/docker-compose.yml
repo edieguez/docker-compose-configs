@@ -5,8 +5,8 @@ services:
     image: postgres
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: Globant12
-      PGPASSWORD: Globant12
+      POSTGRES_PASSWORD: postgres
+      PGPASSWORD: postgres
       POSTGRES_DB: postgres
     volumes:
       - 'postgres_data:/var/lib/postgresql'

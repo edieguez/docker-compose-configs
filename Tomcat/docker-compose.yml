@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  tomcat:
+    image: docker.io/bitnami/tomcat:latest
+    ports:
+      - '8080:8080'
+    volumes:
+      - 'tomcat_data:/bitnami/tomcat'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+
+volumes:
+  tomcat_data:
+    driver: local

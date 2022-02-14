@@ -1,4 +1,4 @@
-version: '3'
+version: '3.9'
 
 services:
   nexus-iq-server:
@@ -6,4 +6,3 @@ services:
     ports:
       - '8070:8070'
       - '8071:8071'
-

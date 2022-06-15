@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  webgoat:
+    image: webgoat/goatandwolf:latest
+    ports:
+      - 8080:8080
+      - 9090:9090
+    environment:
+      TZ: America/United States of America

@@ -1,0 +1,15 @@
+---
+version: "3.8"
+
+services:
+  transmission:
+    image : jaymoulin/transmission
+    container_name: transmission
+    command: transmission-daemon -f -g /config -a *.*.*.* -e /config/transmission.log
+    volumes:
+      - ./config:/config
+      - ${downloads}:/Downloads
+    ports:
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp

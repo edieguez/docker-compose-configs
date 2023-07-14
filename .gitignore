@@ -3,4 +3,7 @@ Plex/Library
 Plex/Movies
 Plex/Series
 
+# Transmission
+Transmission/config
+
 .env

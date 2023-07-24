@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  kafka:
+    image: docker.io/bitnami/kafka:3.5
+    ports:
+      - 9092:9092
+    environment:
+      - ALLOW_PLAINTEXT_LISTENER=yes
+    volumes:
+      - kafka_data:/bitnami
+      - ./kafka/config:/bitnami/kafka/config
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui
+    ports:
+      - 8080:8080
+    environment:
+      - DYNAMIC_CONFIG_ENABLED=true
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:8080/actuator/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+
+volumes:
+  kafka_data:
+    driver: local

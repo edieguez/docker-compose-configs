@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  nessus:
+    image: tenableofficial/nessus
+    container_name: nessus
+    environment:
+      USERNAME: ${username}
+      PASSWORD: ${password}
+      ACTIVATION_CODE: ${activation_code}
+    ports:
+      - 8834:8834

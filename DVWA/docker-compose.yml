@@ -1,0 +1,30 @@
+volumes:
+  dvwa:
+
+networks:
+  dvwa:
+
+services:
+  dvwa:
+    build: .
+    image: ghcr.io/digininja/dvwa:latest
+    environment:
+      - DB_SERVER=mariadb
+    depends_on:
+      - mariadb
+    networks:
+      - dvwa
+    ports:
+      - 4280:80
+
+  mariadb:
+    image: docker.io/library/mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=dvwa
+      - MYSQL_DATABASE=dvwa
+      - MYSQL_USER=dvwa
+      - MYSQL_PASSWORD=p@ssw0rd
+    volumes:
+      - dvwa:/var/lib/mysql
+    networks:
+      - dvwa

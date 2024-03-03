@@ -1,12 +1,12 @@
-version: "3"
+version: "3.8"
+
 services:
-  datascience-notebook:
-      image: jupyter/tensorflow-notebook
+  tensorflow-notebook:
+      image: quay.io/jupyter/tensorflow-notebook
       volumes:
-          - 'jupyter_home:/home/jovyan/'
+          - 'jupyter_home:/home/jovyan'
       ports:
         - 8888:8888
-      container_name: datascience-notebook-container
 
 volumes:
   jupyter_home:

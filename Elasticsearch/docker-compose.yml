@@ -2,16 +2,19 @@ version: '3.9'
 
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.13.0
     environment:
       - discovery.type=single-node
+      - xpack.security.enabled=false # Disable security. Do not use in production.
     ports:
       - "9200:9200"
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
     networks:
       - elastic
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:8.11.1
+    image: docker.elastic.co/kibana/kibana:8.13.0
     ports:
       - "5601:5601"
     environment:
@@ -22,3 +25,6 @@ services:
 networks:
   elastic:
     driver: bridge
+
+volumes:
+  elasticsearch-data: {}

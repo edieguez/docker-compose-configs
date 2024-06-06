@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   nexus-iq-server:
     image: 'sonatype/nexus-iq-server:latest'

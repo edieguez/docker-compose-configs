@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   kafka:
     image: docker.io/bitnami/kafka:3.5

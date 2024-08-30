@@ -9,7 +9,7 @@
 ## Useful aliases
 
 ```bash
-alias kafka-topics='docker compose exec kafka kafka-topics.sh --bootstrap-server 127.0.0.1:9092'
-alias kafka-console-consumer='docker compose exec kafka kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092'
-alias kafka-console-producer='docker compose exec kafka kafka-console-producer.sh --bootstrap-server 127.0.0.1:9092'
+alias kafka-topics='docker compose exec kafka kafka-topics --bootstrap-server 127.0.0.1:9092'
+alias kafka-console-consumer='docker compose exec kafka kafka-console-consumer --bootstrap-server 127.0.0.1:9092'
+alias kafka-console-producer='docker compose exec kafka kafka-console-producer --bootstrap-server 127.0.0.1:9092'
 ```

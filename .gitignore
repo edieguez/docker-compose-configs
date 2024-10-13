@@ -7,3 +7,4 @@ Plex/Series
 Transmission/config
 
 .env
+.DS_Store
